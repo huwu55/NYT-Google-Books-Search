@@ -9,6 +9,7 @@ require("dotenv").config();
 const googleAPI = process.env.GoogleBooksAPI;
 
 const path = require("path");
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
