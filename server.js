@@ -94,7 +94,7 @@ app.delete("/api/books/:id", (req, res)=>{
 });
 
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
 })
 
 // Start the API server
