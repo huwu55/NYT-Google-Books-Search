@@ -1,0 +1,53 @@
+nav {
+    position: fixed;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.search {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchBox{
+    display: inline-block;
+}
+
+.result, .savedBooks {
+    margin-bottom: 80px;
+}
+
+img {
+    box-shadow: 5px 5px 5px grey;
+}
+
+.card {
+    margin: 10px;
+    padding: 20px;
+}
+
+.nomatch{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-outline-danger, .btn-outline-success {
+    margin: 2px;
+}
+
+
+footer {
+    /* background-color: #666666; */
+    width:100%;
+    /* color: #cccccc; */
+    /* font-size:10pt; */
+    bottom:0;
+    position: fixed;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    /* border-top: solid 5px; */
+    /* border-color:#4aaaa5; */
+}
