@@ -16,8 +16,10 @@ class Search extends React.Component {
     submitSearch = event => {
         event.preventDefault();
 
-        let searchTerm = event.target.children[0].children[0].value;
+        let searchTerm = event.target.children[0].children[0].value.trim();
         //alert(searchTerm);
+        if (searchTerm == "")
+            searchTerm = "Fantastic Beasts and Where to Find Them";
         API.searchBook(searchTerm)
             .then(res => {
                 // console.log(res.data);
