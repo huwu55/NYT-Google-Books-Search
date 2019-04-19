@@ -1,5 +1,7 @@
 # NYT-Google-Books-Search
 
+React-based Google Books Search app. Display books based on user searches. Use Node, Express and MongoDB so that users can save books to review. This project is mainly focus on to create React components, work with heler.util functions, and utilize React lifecycle methods.
+
 <p align="center">
   <img width="500" height="284" src="./photo/cover.png" alt="Google Books Search Cover page">
 </p>
@@ -46,7 +48,12 @@ yarn start
 React is running on port 3000. Open your browser and visit http://localhost:3000.
 
 ### Usage Example
-* This is a single page application that uses `react-router-dom` to navigate, hide and show React components without changing routes within Express.
+This is a single page application that uses `react-router-dom` to navigate, hide and show React components without changing routes within Express.
+
+Enter a book name and search for results. The server will return maximum 20 related results from Google. 
+* Click on view button and direct user to Google book link to read more info about the book. 
+* Save button will save this book to database.
+* Under the saved page, a list of saved books will be listed.
 
 <p align="center">
   <img width="384" height="616" src="./photo/search.png" alt="Search results">
