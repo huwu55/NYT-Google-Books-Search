@@ -1,6 +1,6 @@
 # NYT-Google-Books-Search
 
-React-based Google Books Search app. Display books based on user searches. Use Node, Express and MongoDB so that users can save books to review. This project is mainly focus on to create React components, work with heler.util functions, and utilize React lifecycle methods.
+React-based Google Books Search app. Display books based on user searches. Use Node, Express and MongoDB so that users can save books to review. This project is mainly focus on to create React components, work with helper/util functions, and utilize React lifecycle methods.
 
 <p align="center">
   <img width="500" height="284" src="./photo/cover.png" alt="Google Books Search Cover page">
