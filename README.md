@@ -49,11 +49,11 @@ React is running on port 3000. Open your browser and visit http://localhost:3000
 * This is a single page application that uses `react-router-dom` to navigate, hide and show React components without changing routes within Express.
 
 <p align="center">
-  <img width="192" height="308" src="./photo/search.png" alt="Search results">
+  <img width="384" height="616" src="./photo/search.png" alt="Search results">
 </p>
 
 <p align="center">
-  <img width="192" height="308" src="./photo/saved.png" alt="Saved books">
+  <img width="384" height="616" src="./photo/saved.png" alt="Saved books">
 </p>
 
 ## Deployed to Heroku
