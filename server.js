@@ -1,5 +1,5 @@
 const express = require("express");
-const axios = require("axios");
+const fetch = require('node-fetch');
 const mongoose = require("mongoose");
 const app = express();
 const db = require("./models");
@@ -27,34 +27,32 @@ app.get("/search/:searchTerm", (req, res)=>{
   // console.log(req.params.searchTerm);
   if (req.params.searchTerm=="") res.json([]);
   else{
-    axios.get("https://www.googleapis.com/books/v1/volumes", {
-      params: {
-        q: req.params.searchTerm,
-        maxResults: 20,
-        orderBy : "relevance",
-        apiKey : googleAPI
-      }
-    }).then(response => {
-      let item = response.data.items;
-      let results = [];
-      for(let i = 0; i < item.length; i++){
-        let info = item[i].volumeInfo;
-        if (info.description && info.imageLinks){
-          results.push({
-            title : info.title,
-            authors : info.authors,
-            description : info.description,
-            image : info.imageLinks.thumbnail,
-            link : info.infoLink
-          });
+    let url = `https://www.googleapis.com/books/v1/volumes?q=${req.params.searchTerm}&maxResults=20&orderBy=relevance`;
+    //console.log(url);
+    fetch(url)
+      .then(res=>res.json())
+      .then(response=>{
+        //console.log(response.items);
+        let item = response.items;
+        let results = [];
+        for(let i = 0; i < item.length; i++){
+          let info = item[i].volumeInfo;
+          if (info.description && info.imageLinks){
+            results.push({
+              title : info.title,
+              authors : info.authors,
+              description : info.description,
+              image : info.imageLinks.thumbnail,
+              link : info.infoLink
+            });
+          }
         }
-      }
-      //res.json(item);
-      res.json(results);
-    }).catch(err => {
-      console.log(err);
-      res.status(422).json(err);
-    });
+        res.json(results);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(422).json(err);
+      });
   }
 });
 
